@@ -4,7 +4,7 @@
  *
  * @package     FreshBooks Integration for Easy Digital Downloads
  * @subpackage  Payment Actions
- * @copyright   Copyright (c) 2014, Daniel Espinoza
+ * @copyright   Copyright (c) 2012-2016, Daniel Espinoza
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0 
  */

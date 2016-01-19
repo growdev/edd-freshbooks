@@ -4,9 +4,9 @@
  *
  * @package     FreshBooks Integration for Easy Digital Downloads
  * @subpackage  Register Settings
- * @copyright   Copyright (c) 2012, Daniel Espinoza (daniel@growdevelopment.com)
+ * @copyright   Copyright (c) 2012-2016, Daniel Espinoza (daniel@growdevelopment.com)
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       1.0 
+ * @since       1.0.0
 */
 
 /**
@@ -212,6 +212,18 @@ function growdev_freshbooks_create_payment( $payment_id ) {
 		$amount = $payment;
 
 		$xml .= "<amount>" . $amount . "</amount>";
+
+		$type = get_post_meta( $payment_id, '_edd_payment_gateway', true );
+		if ( 'paypal' == $type ) {
+			$xml .= "<type>PayPal</type>";
+		} elseif ( 'stripe' == $type ) {
+			$xml .= "<type>Credit Card</type>";
+		} elseif ( 'check' == $type ) {
+			$xml .= "<type>Check</type>";
+		} elseif ( 'cash' == $type ) {
+			$xml .= "<type>Cash</type>";
+		}
+
 		$xml .= "</payment>";
 		$xml .= "</request>";  
 
@@ -233,7 +245,7 @@ function growdev_freshbooks_create_payment( $payment_id ) {
 			// set fresh books invoice to status 'paid'
 			growdev_freshbooks_addlog('END - Creating payment for order #' . $payment_id );							
 		} else {
-			// An error occured
+			// An error occurred
 			$error_string = __('There was an error creating a payment in FreshBooks:','edd') . "\n" . 
 							__('Error: ','edd') . $response->error . "\n" . 
 							__('Error Code: ','edd') . $response->code . "\n" . 

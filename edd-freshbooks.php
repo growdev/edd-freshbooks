@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name: Easy Digital Downloads - FreshBooks Integration
- * Plugin URI: http://growdevelopment.com
+ * Plugin URI: https://shopplugins.com
  * Description: Integrates <a href="https://easydigitaldownloads.com/" target="_blank">Easy Digital Downloads</a> with the <a href="http://www.freshbooks.com" target="_blank">FreshBooks Cloud Accounting</a> accounting software.
- * Author: Grow Development
- * Author URI: http://growdevelopment.com
+ * Author: Daniel Espinoza
+ * Author URI: https://shopplugins.com
  * Version: 1.0.9
  *
  * Easy Digital Downloads is free software: you can redistribute it and/or modify

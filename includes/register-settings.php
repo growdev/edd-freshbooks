@@ -4,7 +4,7 @@
  *
  * @package     FreshBooks Integration for Easy Digital Downloads
  * @subpackage  Register Settings
- * @copyright   Copyright (c) 2015, Daniel Espinoza (daniel@growdevelopment.com)
+ * @copyright   Copyright (c) 2012-2016, Daniel Espinoza (daniel@growdevelopment.com)
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
  * @since       1.0 
 */
