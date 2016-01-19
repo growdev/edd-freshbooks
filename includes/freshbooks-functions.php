@@ -4,9 +4,9 @@
  *
  * @package     FreshBooks Integration for Easy Digital Downloads
  * @subpackage  Register Settings
- * @copyright   Copyright (c) 2012-2016, Daniel Espinoza (daniel@growdevelopment.com)
+ * @copyright   Copyright (c) 2012, Daniel Espinoza (daniel@growdevelopment.com)
  * @license     http://opensource.org/licenses/gpl-2.0.php GNU Public License
- * @since       1.0.0
+ * @since       1.0
 */
 
 /**
@@ -213,7 +213,16 @@ function growdev_freshbooks_create_payment( $payment_id ) {
 
 		$xml .= "<amount>" . $amount . "</amount>";
 
+
+		// TODO add <type>
+		// Freshbooks only allows a few kinds of types:
+		// https://www.freshbooks.com/developers/docs/payments
+		// ‘Cash’, ‘Check’, ‘Credit’, ‘Credit Card’, ‘Bank Transfer’, ‘Debit’, ‘PayPal’,
+		// ’2Checkout’, ‘VISA’, ‘MASTERCARD’, ‘DISCOVER’, ‘NOVA’, ‘AMEX’, ‘DINERS’,
+		// ‘EUROCARD’, ‘JCB’ or ‘ACH’.
+		//
 		$type = get_post_meta( $payment_id, '_edd_payment_gateway', true );
+
 		if ( 'paypal' == $type ) {
 			$xml .= "<type>PayPal</type>";
 		} elseif ( 'stripe' == $type ) {
@@ -222,7 +231,12 @@ function growdev_freshbooks_create_payment( $payment_id ) {
 			$xml .= "<type>Check</type>";
 		} elseif ( 'cash' == $type ) {
 			$xml .= "<type>Cash</type>";
+		}  elseif ( 'braintree' == $type ) {
+			$xml .= "<type>Credit Card</type>";
+		} elseif ( 'authorize' == $type ) {
+			$xml .= "<type>Credit Card</type>";
 		}
+
 
 		$xml .= "</payment>";
 		$xml .= "</request>";  
