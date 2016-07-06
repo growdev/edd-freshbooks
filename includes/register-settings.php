@@ -81,3 +81,20 @@ function growdev_fb_register_settings( $settings) {
 }
 
 add_filter('edd_settings_misc', 'growdev_fb_register_settings', 10, 1);
+
+/**
+ * Plugin Links.
+ *
+ * @param $links
+ * @return array
+ */
+function edd_freshbooks_plugin_links( $links ) {
+
+	$plugin_links = array(
+		'<a href="' . admin_url( 'edit.php?post_type=download&page=edd-settings&tab=misc' ) . '">' . __( 'Settings', 'edd' ) . '</a>',
+	);
+
+	return array_merge( $plugin_links, $links );
+}
+
+add_filter( 'plugin_action_links_' . GROWDEVFRESHBOOKS_FILE, 'edd_freshbooks_plugin_links' );

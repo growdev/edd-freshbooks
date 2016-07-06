@@ -5,7 +5,7 @@
  * Description: Integrates <a href="https://easydigitaldownloads.com/" target="_blank">Easy Digital Downloads</a> with the <a href="http://www.freshbooks.com" target="_blank">FreshBooks Cloud Accounting</a> accounting software.
  * Author: Daniel Espinoza
  * Author URI: https://shopplugins.com
- * Version: 1.0.9
+ * Version: 1.0.10
  *
  * Easy Digital Downloads is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@
 */
 
 if ( class_exists('EDD_License')) {
-    $license = new EDD_License( __FILE__, 'Freshbooks', '1.0.9', 'Daniel Espinoza' );
+    $license = new EDD_License( __FILE__, 'Freshbooks', '1.0.10', 'Daniel Espinoza' );
 }
 
 /*
@@ -48,7 +48,7 @@ if(!defined('GROWDEVFRESHBOOKS_DIR')) {
 }
 // plugin root file
 if(!defined('GROWDEVFRESHBOOKS_FILE')) {
-	define('GROWDEVFRESHBOOKS_FILE', __FILE__);
+	define('GROWDEVFRESHBOOKS_FILE', plugin_basename( __FILE__ ));
 }
 
 /*
