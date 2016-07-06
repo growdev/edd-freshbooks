@@ -22,12 +22,11 @@
 
 == Changelog ==
 
+2016-07-xx Version 1.0.10
+* Added Settings link to plugin links
+
 2016-01-12 Version 1.0.9
 * Add <type> to payment creation
-* Update logging.
-* Verify with latest version of EDD
-
-2015-07-27 Version 1.0.9
 * Update logging.
 * Verify with latest version of EDD
 
